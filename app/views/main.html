@@ -1,0 +1,22 @@
+<h1>Verizon Employee Location</h1>
+
+<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+  <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+  </ui-gmap-marker>
+</ui-gmap-google-map>
+
+<div ng-cloak>
+  <ul>
+    <li>coords update ctr: {{coordsUpdates}}</li>
+    <li>dynamic move ctr: {{dynamicMoveCtr}}</li>
+  </ul>
+</div>
+
+<button class="button button-full button-positive" ng-click="saveNewLocation()">
+  Save
+</button>
+
+<div ng-show="alertFlag" class="alert alert-success">
+  <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
+  <strong>Success!</strong> Your new location has been saved!
+</div>
