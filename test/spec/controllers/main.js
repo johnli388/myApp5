@@ -12,7 +12,6 @@ describe('Controller: MainCtrl', function () {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope
-      // place here mocked dependencies
     });
   }));
 
@@ -29,26 +28,14 @@ describe('Controller: MainCtrl', function () {
         });
     });
 
-    describe('location marker', function() {//testing mark properties
-        it('Id should be 0 to the scope', function() {
-            expect(scope.marker.id).toEqual(0);
+    describe('marker location', function() {//testing user's location properties, lat and lon
+        it('should be a number for marker.latitude', function() {
+            expect(scope.markerLat).toEqual(jasmine.any(Number));
         });
-        it('should be a number for marker.coords.latitude', function() {
-            expect(scope.marker.coords.latitude).toEqual(jasmine.any(Number));
-        });
-        it('should be a number for marker.coords.longitude', function() {
-            expect(scope.marker.coords.longitude).toEqual(jasmine.any(Number));
+        it('should be a number for marker.longitude', function() {
+            expect(scope.markerLon).toEqual(jasmine.any(Number));
         });
     });
-
-    //describe('marker location', function() {//testing user's location properties, lat and lon
-    //    it('should be a number for marker.latitude', function() {
-    //        expect(scope.markerLat).toEqual(jasmine.any(Number));
-    //    });
-    //    it('should be a number for marker.longitude', function() {
-    //        expect(scope.markerLon).toEqual(jasmine.any(Number));
-    //    });
-    //});
 
     describe('saveNewLocation function', function() {//testing saveNewLocation function
         it('sets a new latitude', function() {

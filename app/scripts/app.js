@@ -22,6 +22,13 @@ angular
     .config(['localStorageServiceProvider', function(localStorageServiceProvider){
       localStorageServiceProvider.setPrefix('ls');
     }])
+    //.config(function(uiGmapGoogleMapApiProvider) {
+    //  uiGmapGoogleMapApiProvider.configure({
+    //    //    key: 'your api key',
+    //    v: '3.17',
+    //    libraries: 'places' // Required for SearchBox.
+    //  });
+    //})
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

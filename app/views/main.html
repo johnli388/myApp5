@@ -1,22 +1,31 @@
-<h1>Verizon Employee Location</h1>
+<div id="map_canvas">
+  <h3>My Location</h3>
+  <div id="errMsg"></div>
 
-<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
-  <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
-  </ui-gmap-marker>
-</ui-gmap-google-map>
+  <script type="text/ng-template" id="searchbox.tpl.html">
+    <input type="text" placeholder="Search Box">
+  </script>
 
-<div ng-cloak>
-  <ul>
-    <li>coords update ctr: {{coordsUpdates}}</li>
-    <li>dynamic move ctr: {{dynamicMoveCtr}}</li>
-  </ul>
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+    <ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>
+    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+  </ui-gmap-google-map>
+
+  <div class="btn-save">
+    <button class="btn btn-primary center-block" ng-click="saveNewLocation()">Save</button>
+  </div>
+
+  <div ng-show="alertFlag" class="alert alert-success">
+    <strong>Success!</strong> Your new location has been saved!
+  </div>
 </div>
 
-<button class="button button-full button-positive" ng-click="saveNewLocation()">
-  Save
-</button>
 
-<div ng-show="alertFlag" class="alert alert-success">
-  <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
-  <strong>Success!</strong> Your new location has been saved!
-</div>
+
+
+
+
+
+
+
+

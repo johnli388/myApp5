@@ -1,6 +1,9 @@
 
 .angular-google-map-container { height: 400px; }
-
+.btn-save{
+  margin: 10px;
+  text-align: center;
+}
 
 
 
